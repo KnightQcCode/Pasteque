@@ -1,0 +1,64 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+.boutons {
+  padding: 10px;
+  @include ombrePortee;
+  border-width: 1px;
+  border-radius: 5px;
+  font-family: $fonteTitreMedium;
+  text-decoration: none;
+  transition: ease 0.5s;
+  &--btnGeneral {
+    background-color: $saumonPale;
+    color: $blanc;
+    width: 50%;
+    @media (min-width: $bureau) {
+      width: 28%;
+    }
+    &:focus {
+      border-width: 2px;
+      border-color: $rougeFonce;
+    }
+    &:hover {
+      background-color: $saumonFonce;
+    }
+    &:active {
+      background-color: $rougeFonce;
+    }
+    &:disabled {
+      border-width: 2px;
+      background-color: $btnGeneralDisable;
+      border-color: $contourBtnGeneral;
+    }
+  }
+  &--btnFooter {
+    padding: 8px;
+    background-color: $vertMarinPale;
+    margin-top: 15px;
+    border-color: $blanc;
+    transition: ease 0.5s;
+    @media (min-width: $bureau) {
+      width: 50%;
+    }
+    &:focus {
+      background-color: $vertMarinPale;
+      border-width: 2px;
+      border-color: $contourBtnFooter;
+    }
+    &:link {
+      background-color: $vertMarinPale;
+    }
+    &:hover {
+      background-color: $vertMarin;
+    }
+    &:active {
+      background-color: $vertMarinFonce;
+    }
+    &:disabled {
+      border-width: 2px;
+      background-color: $btnFooterDisable;
+    }
+  }
+}

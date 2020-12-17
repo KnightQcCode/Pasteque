@@ -1,0 +1,187 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+*/
+.sousTitre {
+  width: span(4 of 4);
+  @media (min-width: $bureau) {
+    text-align: center;
+  }
+}
+.validation__recapitulatif__flex {
+  display: flex;
+  flex-direction: column;
+}
+.validation {
+  display: flex;
+  flex-direction: column;
+  &__titre {
+    width: span(4 of 4);
+    @media (min-width: $bureau) {
+      width: span(6 of 12);
+      margin-left: 17%;
+    }
+  }
+  &__client {
+    width: span(4 of 4);
+    display: flex;
+    justify-content: center;
+    @media (min-width: $bureau) {
+    width: 100%;
+    }
+  }
+  &__recapitulatif {
+    background-color: $blanc;
+    width: span(4 of 4);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media (min-width: $bureau) {
+      align-self: center;
+      width: span(8 of 12);
+    }
+    &__quantite {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+    &__livraison {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+    &__sousTotal {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+    &__tps {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      border-bottom: solid 0.5px black;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+    &__total {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+  }
+  &__adresse {
+    background-color: $blanc;
+    width: span(4 of 4);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $bureau) {
+      align-self: center;
+      width: span(8 of 12);
+    }
+    &__info {
+      display: flex;
+      width: span(4 of 4);
+      justify-content: space-between;
+      align-self: center;
+      flex-direction: row;
+      margin-bottom: 15px;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+  }
+  &__infoPaiement {
+    background-color: $blanc;
+    width: span(4 of 4);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $bureau) {
+      align-self: center;
+      width: span(8 of 12);
+    }
+    &__sectionCarte {
+      width: span(4 of 4);
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      flex-direction: row;
+      margin-bottom: 10px;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+      &__Carte {
+        &__paiement {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    &__facturation {
+      width: span(4 of 4);
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      flex-direction: row;
+      margin-bottom: 15px;
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+  }
+}
+
+.validation__infoPaiement__sectionCarte__Carte h4, .validation__infoPaiement__sectionCarte__info h4 {
+  margin: 0;
+}
+
+.lien_modifier {
+  width: span(1 of 4);
+  @media (min-width: $bureau) {
+    width: span(3 of 12);
+  }
+}
+
+.validation__infoPaiement__sectionCarte__Carte__paiement p {
+  line-height: 30px;
+}
+
+.validation__adresse__info p, .validation__infoPaiement__sectionCarte__info p, .validation__infoPaiement__sectionCarte__Carte__paiement p  {
+  margin: 0;
+}
+
+.btnPasserCommande {
+  margin-top: 15px;
+  align-self: center;
+}
+
+.btnPasserCommande a {
+  color: white;
+  text-decoration: none;
+}
+.formConfirmerCommande {
+  display: flex;
+  justify-content: center;
+}

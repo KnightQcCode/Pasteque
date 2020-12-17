@@ -1,0 +1,87 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('contenu'); ?>
+ <div class="picture__transaction">
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/stepleft_etape3.svg">
+ <source media="(max-width:599px)" srcset="liaisons/images/stepleft_mobile_etape3.svg">
+ <img src="liaisons/images/stepleft_etape3.svg" alt="stepleft etape 3">
+ </picture>
+ </div>
+ <div class="validation">
+ <h2 class="validation__titre"><?php echo static::e($nomPage); ?></h2>
+ <div class="validation__client">
+ <p>Livraison à <b><?php echo static::e($tValidationLivraison['nom']['valeur']); ?></b><br/>
+ Date de livraison: <?php echo static::e($date["weekday"]); ?> <?php echo static::e($date["mday"]); ?> <?php echo static::e($date["month"]); ?> <?php echo static::e($date["year"]); ?></p>
+ </div>
+ <div class="validation__recapitulatif">
+ <h3 class="soustitre">Récapitulatif de la commande</h3>
+ <div class="validation__recapitulatif__flex">
+ <div class="validation__recapitulatif__quantite">
+ <p class="validation__recapitulatif__quantite--nombre"><?php echo static::e($quantite); ?> articles</p>
+ <p class="validation__recapitulatif__quantite--prix"><?php echo static::e($prix); ?>$</p>
+ </div>
+ <div class="validation__recapitulatif__livraison">
+ <p>Livraison standard</p>
+ <p>0,00$</p>
+ </div>
+ <div class="validation__recapitulatif__sousTotal">
+ <p>Sous-Total</p>
+ <p><?php echo static::e($prix); ?>$</p>
+ </div>
+ <div class="validation__recapitulatif__tps">
+ <p>TPS 5%</p>
+ <p><?php echo static::e($tps); ?>$</p>
+ </div>
+ <div class="validation__recapitulatif__total">
+ <p>Total</p>
+ <p><?php echo static::e($total); ?></p>
+ </div>
+ </div>
+ </div>
+ <div class="validation__adresse">
+ <h3 class="sousTitre">Adresse de livraison</h3>
+ <div class="validation__adresse__info">
+ <div class="">
+ <p><?php echo static::e($tValidationLivraison['nom']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationLivraison['adresse_livraison']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationLivraison['ville_livraison']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationLivraison['province_livraison']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationLivraison['pays_livraison']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationLivraison['code_postal_livraison']['valeur']); ?></p>
+ </div>
+ <a class="lien_modifier" href="#">Modifier</a>
+ </div>
+ </div>
+ <div class="validation__infoPaiement">
+ <h3 class="sousTitre">Informations de facturation</h3>
+ <div class="validation__infoPaiement__sectionCarte">
+ <div class="validation__infoPaiement__sectionCarte__Carte">
+ <h4>Mode de paiement: </h4>
+ <div class="validation__infoPaiement__sectionCarte__Carte__paiement">
+ <i class="fab fa-cc-visa fa-2x"></i>
+ <p><?php echo static::e($tValidationFacturation['num_carte']['valeur']); ?></p>
+ </div>
+ </div>
+ <a class="lien_modifier" href="#">Modifier</a>
+ </div>
+ <div class="validation__infoPaiement__facturation">
+ <div class="validation__infoPaiement__sectionCarte__info">
+ <h4>Adresse de facturation</h4>
+ <p><?php echo static::e($tValidationLivraison['nom']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationFacturation['adresse_facturation']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationFacturation['ville_facturation']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationFacturation['province_facturation']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationFacturation['pays_facturation']['valeur']); ?></p>
+ <p><?php echo static::e($tValidationFacturation['code_postal_facturation']['valeur']); ?></p>
+ </div>
+ <a class="lien_modifier" href="#">Modifier</a>
+ </div>
+ </div>
+ <form method="POST" action="index.php?controleur=panier&action=confirmerCommande" class="formConfirmerCommande">
+ <input type="hidden" id="total" name="total" value="<?php echo static::e($total); ?>">
+ <input type="hidden" id="client_id" name="client_id" value="<?php echo static::e($panier[0]->client_id); ?>">
+ <input type="submit" class="btnPasserCommande boutons boutons--btnGeneral" value="Confirmer la commande">
+ </form>
+ </div>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('panier.gabarit'); } ?>

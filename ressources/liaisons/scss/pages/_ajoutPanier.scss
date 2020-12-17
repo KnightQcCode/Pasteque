@@ -1,0 +1,40 @@
+/**
+* @author Jonathan Collard - jonath2897@gmail.com
+*/
+.espace{
+  margin: 0;
+  margin-bottom: 15px;
+}
+.fenetre{
+  display: flex;
+  background-color: $blanc;
+  padding: 40px;
+  &__ajout{
+    margin-left: 4%;
+  }
+  &__titre{
+    display: flex;
+    width: 100%;
+    &__titre{
+      margin: 0;
+      margin-bottom: 15px;
+    }
+  }
+  &__bas{
+    padding: 20px;
+    background-color: $saumonPale;
+  }
+}
+
+.btnAllezPanier{
+  padding: 8px;
+  background-color: #62BFAD;
+  border-color: #ffffff;
+  border-radius: 5px;
+  color: white;
+  margin: 0;
+  text-decoration: none;
+  &:hover{
+    background-color: #398172;
+  }
+}

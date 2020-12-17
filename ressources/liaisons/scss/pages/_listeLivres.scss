@@ -1,0 +1,194 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+* @author Jonathan Collard - jonath2897@gmail.com
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+.listeLivres {
+  &__titre {
+    width: span(4 of 4);
+    @media (min-width: $bureau) {
+      width: span(6 of 12);
+      margin-bottom: 0;
+    }
+  }
+  &__form {
+      display: flex;
+      justify-content: flex-end;
+    & select {
+      margin-bottom: 0;
+      padding: 5px;
+      border-radius: 5px;
+
+    }
+    select:focus {
+      border: none;
+    }
+  }
+  &__gallerie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    @media (min-width: $bureau) {
+      flex-direction: initial;
+    }
+    &__btnCategorie {
+      width: 100%;
+      background-color: #FF8B8B;
+      padding: 20px;
+      color: white;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    &__categories {
+      width: span(4 of 4);
+      @media (min-width: $bureau) {
+        width: span(3 of 12);
+      }
+      &__liste {
+        margin-top: 0;
+        &__liens {
+          text-decoration: none;
+          color: $blanc;
+          &__item {
+            background-color: $vertMarinPale;
+            margin-bottom: 10px;
+            color: white;
+            padding: 20px;
+            text-align: center;
+          }
+          & li:hover{
+            background-color:#45a996;
+            transition: ease 0.5s;
+            font-size: 17px;
+          }
+        }
+      }
+      &__telechargement {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: span(3 of 3);
+        &__titre {
+          padding: 10px 0 10px 0;
+          margin-bottom: 10px;
+          color: white;
+          background-color: $saumonPale;
+          width: 100%;
+
+          & text {
+            display: none;
+          }
+        }
+        &__liste {
+          margin-top: 0;
+            &__items {
+              padding: 10px;
+              background-color: $vertMarinPale;
+              margin-bottom: 10px;
+              color: white;
+              text-align: center;
+            }
+        }
+      }
+    }
+    &__fiches {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        width: span(4 of 4);
+        @media (min-width: $bureau) {
+          width: span(9 of 12);
+          margin-bottom: 50px;
+          margin-top: 0;
+        }
+      &__item {
+        width: span(2 of 4);
+        @media (min-width: $bureau) {
+          width: span(4 of 12);
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        &__conteneur {
+          @include ombrePortee;
+
+          & a {
+            & picture {
+              & img {
+                display: block;
+                width: 100%;
+                height: auto;
+                @include ombrePortee;
+              }
+            }
+          }
+        }
+      &:last-child {
+        margin: auto;
+        @media (min-width: $bureau) {
+          margin: initial;
+        }
+      }
+        & a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.nomAuteurs {
+  width: 100%;
+  &__titre{
+    position: relative;
+    top: -18px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    opacity: 60%;
+    color: white;
+    @include ombrePortee;
+    @media (min-width: $bureau) {
+      top: -14px;
+    }
+  }
+  &:nth-child(3) {
+    position: relative;
+    top: -18px;
+    & p {
+      margin-bottom: 30px;
+    }
+    @media (min-width: $bureau) {
+      top: -14px;
+    }
+  }
+  &:nth-child(4) {
+    position: relative;
+    top: -48px;
+    & p {
+      margin-bottom: 20px;
+    }
+    @media (min-width: $bureau) {
+      top: -44px;
+    }
+  }
+}
+
+//PAGINATION
+.pagination {
+  width: span(4 of 4);
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  @media (min-width: $bureau) {
+    justify-content: center;
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+    width: span(9 of 12);
+  }
+}

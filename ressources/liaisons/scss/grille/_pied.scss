@@ -1,0 +1,133 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+.separateur {
+  background-color: $vertMarinPale;
+  height: 40px;
+  margin-bottom: 0;
+}
+
+.pied {
+  background-color: white;
+  padding: 0;
+  &__bloc {
+    background-color: $blanc;
+    &__contenu {
+      @media (min-width: $bureau) {
+        display: flex;
+      }
+      &__horaire {
+        width: span(4 of 4);
+        text-align: center;
+        padding-top: 10px;
+        @media (min-width: $bureau) {
+          text-align: left;
+          padding: 10px 0 0 15px;
+          margin-top: 23px;
+          width: span(4 of 12);
+        }
+        &__titre {
+          margin-bottom: 15px;
+        }
+      }
+      &__infos {
+        width: span(4 of 4);
+        @media (min-width: $bureau) {
+          width: span(4 of 12);
+          margin: auto;
+          margin-top: 35px;
+        }
+        &__coordonnees {
+          text-align: center;
+          &__telephone {
+            margin-bottom: 5px;
+          }
+          &__email {
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+        }
+        &__reseauxSociaux {
+          margin-top: 30px;
+          @media (min-width: $bureau) {
+            margin-top: 15px;
+          }
+          &__liste {
+            display: flex;
+            justify-content: space-evenly;
+            @media (min-width: $bureau) {
+            }
+          }
+        }
+      }
+      &__infoLettre {
+        @include ombrePortee;
+        color: $blanc;
+        background-color: $saumonPale;
+        width: span(4 of 4);
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+        border-radius: 5px 0 0 5px;
+        @media (min-width: $bureau) {
+          width: span(4 of 12);
+          text-align: left;
+          margin-top: 50px;
+          border-radius: 5px 5px 5px 5px;
+        }
+        &__formulaire {
+          &__titre {
+            margin-top: 10px;
+            margin-bottom: 5px;
+          }
+          &__champ {
+            input {
+              margin-top: 10px;
+              height: auto;
+              width: 90%;
+              border-radius: 5px;
+              border: none;
+              color: black;
+              @media (min-width: $bureau) {
+                width: 75%;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__copyright {
+      margin-top: 40px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+.pied__bloc__trx {
+  &__contenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @media (min-width: $bureau) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &__lien {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      @media (min-width: $bureau) {
+        align-self: auto;
+      }
+    }
+    &__protection {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      @media (min-width: $bureau) {
+        margin-top: 16px;
+        align-self: auto;
+      }
+    }
+  }
+}

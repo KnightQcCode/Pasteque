@@ -1,0 +1,265 @@
+/**
+* @author Jonathan Collard - jonath2897@gmail.com
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+.ficheLivre{
+  &__lienRetour {
+    width: span(4 of 4);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @media (min-width: $bureau) {
+      padding-left: 10px;
+      text-align: left;
+      width: span(6 of 12);
+    }
+  }
+  &__informationsImages3{
+    width: span(4 of 4);
+    @include ombrePortee;
+    @media (min-width: $bureau){
+      width: span(2 of 12);
+    }
+  }
+  &__informationsImages1{
+    width: span(4 of 4);
+    @include ombrePortee;
+    @media (min-width: $bureau){
+      width: span(6 of 12);
+    }
+  }
+  &__informationsTextes {
+    width: span(4 of 4);
+    @media (min-width: $bureau) {
+      width: span(6 of 12);
+      float: right;
+    }
+    &__infos {
+      margin: 0;
+      margin-bottom: 5px;
+      font-family: $fonteTitreBold;
+      &__texte {
+        font-family: $fontePrimaire;
+        color: $noir;
+      }
+    }
+    &__bouton  {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      & button {
+      @media (min-width: $bureau) {
+        width: 55%;
+        }
+      }
+    }
+  }
+  &__informationsTitre{
+    margin: 0;
+    text-align: center;
+  }
+  &__flex {
+    @media (min-width: $bureau) {
+      display: flex;
+      justify-content: space-between;
+      clear: both;
+    }
+  }
+  &__petitesImagesMobile {
+    width: span(4 of 4);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & img {
+      @include ombrePortee;
+      width: span(2 of 4);
+    }
+    & img:last-child {
+      width: span(2 of 4);
+      margin: 30px auto 0 auto ;
+
+    }
+    @media (min-width: $bureau) {
+      display: none;
+    }
+  }
+  &__petitesImagesDesktop {
+    display: none;
+    @media (min-width: $bureau) {
+      width: span(6 of 12);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      & img {
+        @include ombrePortee;
+        width: span(2 of 6);
+      }
+    }
+  }
+  &__auteur{
+    @media (min-width: $bureau){
+      width: span(6 of 12);
+      float: left;
+      clear: both;
+      margin-bottom: 50px;
+    }
+    &__liste {
+      margin-top: 50px;
+      @media (min-width: $bureau){
+        display: flex;
+        justify-content: space-between;
+      }
+      & > :only-child {
+        @media (min-width: $bureau) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      &__fiche {
+        margin-bottom: 75px;
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;
+        @include ombrePortee;
+        @media (min-width: $bureau){
+          width: span(3 of 6);
+          margin-bottom: 5px;
+        }
+        &__titre {
+          padding: 10px;
+          text-align: center;
+          background-color: $noir;
+          opacity: 60%;
+          &__nom {
+            color: $blanc;
+            @media (min-width: $bureau){
+              margin-bottom: 8px;
+              margin-top: 8px;
+            }
+          }
+        }
+        &__img {
+          width: 100%;
+        }
+        & a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__memeAuteur{
+    @media (min-width: $bureau){
+      width: span(6 of 12);
+      clear: right;
+      float: right;
+      margin-bottom: 50px;
+    }
+    &Titre{
+      width: 100%;
+    }
+    &__liste {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: wrap;
+      margin-top: 50px;
+      & > :only-child {
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $bureau) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      &Livre {
+        width: span(2 of 4);
+        @include ombrePortee();
+        margin-bottom: 50px;
+        @media (min-width: $bureau){
+          width: span(3 of 6);
+          margin-bottom: 30px;
+        }
+        &__titre{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-align: center;
+          color: $blanc;
+          @media (min-width: $bureau) {
+            padding-top: 70px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 0;
+          }
+        }
+        &__categorie {
+          position: absolute;
+          width: 100%;
+          top: 20%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: $blanc;
+          margin-top: 75px;
+          @media (min-width: $bureau) {
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: 110px;
+          }
+        }
+        &__img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__reconnaissance{
+    @media (min-width: $bureau){
+      clear: both;
+    }
+    &__titre {
+      width: span(4 of 4);
+      @media (min-width: $bureau){
+        width: span(6 of 12);
+      }
+    }
+    &__prix {
+      width: span(4 of 4);
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      @media (min-width: $bureau){
+        width: span(6 of 12);
+        margin-top: 75px;
+      }
+    }
+  }
+  &__boutonsActions {
+    padding-top: 75px;
+    padding-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    & button {
+      width: span(2 of 4);
+      @media (min-width: $bureau) {
+        width: 25%;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.ficheLivre__auteur__liste__fiche__img{
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+.ficheLivre__auteur__liste__fiche__img:hover{
+  cursor:pointer;
+  margin-top: -5px;
+}

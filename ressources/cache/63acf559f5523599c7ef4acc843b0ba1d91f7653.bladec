@@ -1,0 +1,248 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('contenu'); ?>
+ <div class="accueil">
+ <?php if($_SESSION['client2'] == null): ?>
+ <span class="visuallyhidden"><?php echo static::e($_SESSION['client2']=100); ?></span>
+ <?php elseif($_SESSION['client2'] != null): ?>
+ <span class="visuallyhidden"><?php echo static::e($_SESSION['client2']=$infoClient[0]->client_id); ?></span>
+ <?php endif; ?>
+ <span class="visuallyhidden"><?php echo static::e($_SESSION['clientNom']=$infoClient[0]->nom); ?></span>
+ <span class="visuallyhidden"><?php echo static::e($_SESSION['clientPrenom']=$infoClient[0]->prenom); ?></span>
+ <div class="accueil__nouveautes">
+ <h2 class="accueil__nouveautes__titre">Nos nouveautés</h2>
+ <div id="nouveautes" class="accueil__nouveautes__livres">
+ <?php $__currentLoopData = $nouveautes; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $nouveaute): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche">
+ <div class="accueil__nouveautes__livres__fiche__vignette">
+ <div class="container accueil__nouveautes__livres__fiche__vignette__titre">
+
+ <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($nouveaute->id); ?>&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <div class="overlay">
+ <h3 class="text accueil__nouveautes__livres__fiche__vignette__titre__nom titreLivresNouveautes"><?php echo static::e($nouveaute->titre); ?></h3>
+ <p class="textCategorie accueil__nouveautes__livres__fiche__vignette__titre__categorie">[ <?php echo static::e($nouveaute->getCategories()->nom); ?> ]</p>
+ </div>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w286.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w235.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w574@2x.png 2x">
+ <img class="accueil__nouveautes__livres__fiche__vignette__titre__img" src="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w574@2x.png" alt="Photo du livre de la section Nouveautés">
+ </picture>
+ </a>
+ </div>
+ <?php $__currentLoopData = $nouveaute->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche__vignette__auteurs">
+ <a href="index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <p class="accueil__nouveautes__livres__fiche__vignette__auteurs__nom"><?php echo static::e($auteur->getNomPrenom()); ?></p>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div id="nouveautesPlus" class="accueil__nouveautes__livres visuallyhidden">
+ <?php $__currentLoopData = $nouveautesPlus; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $nouveaute): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche">
+ <div class="accueil__nouveautes__livres__fiche__vignette">
+ <div class="container accueil__nouveautes__livres__fiche__vignette__titre">
+ <?php $__currentLoopData = $nouveaute->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($nouveaute->id); ?>&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <div class="overlay">
+ <h3 class="text accueil__nouveautes__livres__fiche__vignette__titre__nom titreLivresNouveautes"><?php echo static::e($nouveaute->titre); ?></h3>
+ <p class="textCategorie accueil__nouveautes__livres__fiche__vignette__titre__categorie">[ <?php echo static::e($nouveaute->getCategories()->nom); ?> ]</p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w286.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w235.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w574@2x.png 2x">
+ <img class="accueil__nouveautes__livres__fiche__vignette__titre__img" src="liaisons/images/ListeLivres/<?php echo static::e($nouveaute->isbn_papier); ?>_w235@2x.png" alt="Photo du livre de la section Nouveautés">
+ </picture>
+ </a>
+ </div>
+ <?php $__currentLoopData = $nouveaute->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche__vignette__auteurs">
+ <a href="index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <p class="accueil__nouveautes__livres__fiche__vignette__auteurs__nom"><?php echo static::e($auteur->getNomPrenom()); ?></p>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <p class="accueil__nouveautes__afficherTout">
+ <a id="more">Afficher toutes nos nouveautés</a>
+ </p>
+ </div>
+ <div class="accueil__aParaitre">
+ <h2 class="accueil__aParaitre__titre">Les livres à paraître prochainement</h2>
+ <div class="accueil__aParaitre__livres">
+ <?php $__currentLoopData = $aParaitres; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $aParaitre): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__aParaitre__livres__fiche">
+ <div class="accueil__aParaitre__livres__fiche__vignette">
+ <div class="container accueil__aParaitre__livres__fiche__vignette__titre">
+ <?php $__currentLoopData = $aParaitre->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($aParaitre->id); ?>&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <div class="overlay">
+ <h3 class="text accueil__aParaitre__livres__fiche__vignette__titre__nom titreLivresAParaitre"><?php echo static::e($aParaitre->titre); ?></h3>
+ <p class="textCategorie accueil__aParaitre__livres__fiche__vignette__titre__categorie">[ <?php echo static::e($aParaitre->getCategories()->nom); ?> ]</p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w286.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w235.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w574@2x.png 2x">
+ <img class="accueil__aParaitre__livres__fiche__vignette__titre__img" src="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w235.png" alt="Photo du livre de la section Paraîtres">
+ </picture>
+ </a>
+ </div>
+ <div class="accueil__aParaitre__livres__fiche__vignette__auteurs">
+ <?php $__currentLoopData = $aParaitre->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <a href="index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <p class="accueil__aParaitre__livres__fiche__vignette__auteurs__nom"><?php echo static::e($auteur->getNomPrenom()); ?></p>
+ </a>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <div>
+
+ <p class="accueil__aParaitre__livres__fiche__date">
+ <i class="icone__date far fa-clock fa-1x"></i>
+ <span class="icone__date" aria-hidden="true"></span>
+ <?php echo static::e($aParaitre->date_parution_quebec); ?></p>
+ <p class="screen-reader-only">Icône de la date du parution</p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div id="aParaitrePlus" class="accueil__nouveautes__livres visuallyhidden">
+ <?php $__currentLoopData = $aParaitresPlus; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $aParaitre): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche">
+ <div class="accueil__nouveautes__livres__fiche__vignette">
+ <div class="container accueil__nouveautes__livres__fiche__vignette__titre">
+ <?php $__currentLoopData = $aParaitre->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($aParaitre->id); ?>&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <div class="overlay">
+ <h3 class="text accueil__nouveautes__livres__fiche__vignette__titre__nom titreLivresAParaitre"><?php echo static::e($aParaitre->titre); ?></h3>
+ <p class="textCategorie accueil__nouveautes__livres__fiche__vignette__titre__categorie">[ <?php echo static::e($aParaitre->getCategories()->nom); ?> ]</p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w286.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w235.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w574@2x.png 2x">
+ <img class="accueil__nouveautes__livres__fiche__vignette__titre__img" src="liaisons/images/ListeLivres/<?php echo static::e($aParaitre->isbn_papier); ?>_w235.png" alt="Photo du livre de la section Nouveautés">
+ </picture>
+ </a>
+ </div>
+ <?php $__currentLoopData = $aParaitre->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $auteur): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__nouveautes__livres__fiche__vignette__auteurs">
+ <a href="index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($auteur->id); ?>">
+ <p class="accueil__nouveautes__livres__fiche__vignette__auteurs__nom"><?php echo static::e($auteur->getNomPrenom()); ?></p>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div>
+
+ <p class="accueil__aParaitre__livres__fiche__date">
+ <i class="icone__date far fa-clock fa-1x"></i>
+ <span class="icone__date" aria-hidden="true"></span>
+ <?php echo static::e($aParaitre->date_parution_quebec); ?></p>
+ <p class="screen-reader-only">Icône de la date du parution</p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <p class="accueil__aParaitre__afficherTout">
+ <a id="more2">Afficher tous les livres à paraîtres</a>
+ </p>
+ </div>
+ <div class="accueil__evenements">
+ <h2 class="accueil__evenements__titre">Les évènements</h2>
+ <div class="accueil__evenements__liste">
+ <?php $__currentLoopData = $evenements; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $evenement): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__evenements__liste__sections">
+ <div class="accueil__evenements__liste__sections__carte">
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/evenements/<?php echo static::e($evenement->id); ?>_evenement_w280.png 1x,
+ liaisons/images/evenements/<?php echo static::e($evenement->id); ?>_evenement_w558@2x.png 2x">
+ <source media="(max-width:599px)" srcset="liaisons/images/evenements/<?php echo static::e($evenement->id); ?>_evenement_w480.png 1x,
+ liaisons/images/evenements/<?php echo static::e($evenement->id); ?>_evenement_w980@2x.png 2x">
+ <img class="accueil__evenements__liste__sections__carte__img" src="https://via.placeholder.com/490x210" alt="Photo de l'activité de la section Évènements">
+ </picture>
+ <h3 class="h3-bold accueil__evenements__liste__sections__carte__titre"><?php echo static::e($evenement->titre); ?></h3>
+ <p class="accueil__evenements__liste__sections__carte__editeur">Nom de l'éditeur</p>
+ <p class="accueil__evenements__liste__sections__carte__description"><?php echo static::e($evenement->getDescriptionCourte()); ?></p>
+ <div class="accueil__evenements__liste__sections__carte__reseauxSociaux">
+ <a class="accueil__evenements__liste__sections__carte__reseauxSociaux__icones" href="http://instagram.com">
+ <i class="icone__insta fab fa-instagram fa-3x"></i>
+ <span class="icone__instagram" aria-hidden="true"></span>
+ <p class="screen-reader-only">Instagram</p>
+ </a>
+ <a class="accueil__evenements__liste__sections__carte__reseauxSociaux__icones" href="https://fr-ca.facebook.com/">
+ <i class="icone__fb fab fa-facebook-square fa-3x"></i>
+ <span class="icone__facebook" aria-hidden="true"></span>
+ <p class="screen-reader-only">Facebook</p>
+ </a>
+ </div>
+ </div>
+ <p class="accueil__evenements__liste__sections__date"><?php echo static::e($evenement->date); ?></p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <p class="accueil__evenements__afficherTout">
+ <a href="#">Afficher toutes les évènements</a>
+ </p>
+ </div>
+ <div class="accueil__actualites">
+ <h2 class="accueil__actualites__titre">Dernières actualités</h2>
+ <div class="accueil__actualites__liste">
+ <?php $__currentLoopData = $actualites; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $actualite): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="accueil__actualites__liste__carte">
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/actualites/<?php echo static::e($actualite->id); ?>_actualite_w280.png 1x,
+ liaisons/images/actualites/<?php echo static::e($actualite->id); ?>_actualite_w558@2x.png 2x">
+ <source media="(max-width:599px)" srcset="liaisons/images/actualites/<?php echo static::e($actualite->id); ?>_actualite_w480.png 1x,
+ liaisons/images/actualites/<?php echo static::e($actualite->id); ?>_actualite_w980@2x.png 2x">
+ <img class="accueil__actualites__liste__carte__img" src="https://via.placeholder.com/490x210" alt="Photo de l'activité de la section Actualités">
+ </picture>
+ <h3 class="h3-bold accueil__actualites__liste__carte__titre"><?php echo static::e($actualite->titre); ?></h3>
+ <p class="accueil__evenements__liste__carte__editeur">Un nom éditeur</p>
+ <p class="accueil__actualites__liste__carte__description"><?php echo static::e($actualite->getDescriptionCourte()); ?></p>
+ <div class="accueil__actualites__liste__carte__reseauxSociaux">
+ <a class="accueil__actualites__liste__carte__reseauxSociaux__icones" href="http://instagram.com">
+ <i class="icone__insta fab fab fa-instagram fa-3x"></i>
+ <span class="icone__instagram" aria-hidden="true"></span>
+ <p class="screen-reader-only">Instagram</p>
+ </a>
+ <a class="accueil__actualites__liste__carte__reseauxSociaux__icones" href="https://fr-ca.facebook.com/">
+ <i class="icone__fb fab fa-facebook-square fa-3x"></i>
+ <span class="icone__facebook" aria-hidden="true"></span>
+ <p class="screen-reader-only">Facebook</p>
+ </a>
+ </div>
+ <p class="accueil__actualites__liste__carte__date"><?php echo static::e($actualite->date); ?></p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <p class="accueil__actualites__afficherTout">
+ <a href="#">Afficher toutes les actualités</a>
+ </p>
+ </div>
+ <div class="accueil__galerieBoutique">
+ <h2 class="accueil__galerieBoutique__titre">Les évènements du mois à la galerie-boutique</h2>
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('gabarit'); } ?>

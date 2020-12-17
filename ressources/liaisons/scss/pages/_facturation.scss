@@ -1,0 +1,193 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+*/
+.btnFacturation {
+  margin: 15px auto 0;
+  display: block;
+}
+.facturation {
+  &__titre {
+    width: span(4 of 4);
+    @media (min-width: $bureau) {
+      width: span(4 of 12);
+      margin-left: 17%;
+    }
+  }
+  &__form {
+    &__info {
+      background-color: $saumonPale;
+      color: white;
+      padding: 10px;
+      width: span(4 of 4);
+      margin: 0 auto 15px;
+      @media (min-width: $bureau) {
+        width: span(8 of 12)
+      }
+      &__titre {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__h4{
+          margin: 0;
+        }
+      }
+      &__item {
+        margin: 0;
+      }
+      &__notice {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.pageFacturation {
+  background-color: white;
+  width: span(4 of 4);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  @media (min-width: $bureau) {
+    width: span(8 of 12)
+  }
+  &__adresseFacturation{
+    &__sousTitre {
+    }
+    &__adresse {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 75%;
+      }
+    }
+    &__ville {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 70%;
+      }
+    }
+    &__province {
+      margin-bottom: 10px;
+      &__label {
+        display: flex;
+        flex-direction: column;
+        &--input {
+          border-radius: 5px;
+          width: 70%;
+        }
+      }
+    }
+    &__pays {
+      margin-bottom: 10px;
+      &__label {
+        display: flex;
+        flex-direction: column;
+        &--input {
+          border-radius: 5px;
+          width: 70%;
+        }
+      }
+    }
+    &__codePostal {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 75%;
+      }
+    }
+    &__memeAdresse {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.infoPaiement {
+  background-color: white;
+  width: span(4 of 4);
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 0 auto 15px;
+  @media (min-width: $bureau) {
+    width: span(8 of 12)
+  }
+  &__paiement {
+    &--sousTitre {
+      margin-bottom: 0;
+    }
+
+    &__info {
+      &__sousTitre {
+        margin-bottom: 0;
+      }
+
+      &__icon {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      &__nom {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        &--input {
+          border-radius: 5px;
+          width: 75%;
+        }
+      }
+      &__numero {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        &--input {
+          border-radius: 5px;
+          width: 75%;
+        }
+      }
+      &__codeSecurite {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        &--input {
+          border-radius: 5px;
+          width: 30%;
+        }
+      }
+      &__date {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        &__label {
+          &__selectGroup {
+            display: flex;
+            //flex-direction: column;
+            &--select {
+              border-radius: 5px;
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.invisible__Facturation {
+  display: none;
+}
+[name=typePaiement]:checked~.optional {
+  display: block;
+}
+.picture__transaction {
+  display: flex;
+}
+.picture__transaction picture {
+  margin: 15px auto 0;
+}

@@ -1,0 +1,169 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+*/
+
+.panier p, .panier__conteneur__livre__info--total--prix p {
+  margin: 0;
+}
+.panier {
+  display: flex;
+  flex-direction: column;
+  &__titre {
+    width: span(4 of 4);
+    @media (min-width: $bureau) {
+      width: span(4 of 12);
+      margin-left: 8.5%;
+    }
+  }
+  &__listeLivres {
+    align-self: center;
+    @media (min-width: $bureau) {
+      width: 78%;
+    }
+
+  }
+  &__info {
+    background-color: $saumonPale;
+    @include ombrePortee;
+    color: white;
+    padding: 10px;
+    @media (min-width: $bureau) {
+      width: span(10 of 12);
+      margin-left: 8.5%;
+    }
+  }
+  &__conteneur {
+    background-color: $blanc;
+    width: span(4 of 4);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    @include ombrePortee;
+    @media (min-width: $bureau) {
+      align-self: center;
+      width: span(10 of 12);
+    }
+    &__livre {
+      width: span(4 of 4);
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 25px;
+      margin-top: 15px;
+      @media (min-width: $bureau) {
+        width: span(12 of 12);
+      }
+      &--img {
+        @include ombrePortee;
+        margin-right: 10px;
+        @media (min-width: $bureau) {
+          margin-right: 20px;
+        }
+      }
+      &__info {
+        display: flex;
+        flex-direction: column;
+        width: span(3 of 4);
+        @media (min-width: $bureau) {
+          width: span(10 of 12);
+        }
+        &--titre {
+          margin: 0;
+        }
+        &--btnRecalculer {
+          width: 100%;
+          margin-top: 10px;
+          @media (min-width: $bureau) {
+            margin-top: 0;
+            width: auto;
+          }
+        }
+        &__total {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          &--prix {
+            font-family: $fonteTitreBold;
+          }
+        }
+      }
+    }
+    &__sectionPrix {
+      width: span(4 of 4);
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      padding-right: 10px;
+      padding-left: 10px;
+      @media (min-width: $bureau) {
+        width: span(6 of 12);
+        margin-right: 90px;
+        padding: 0;
+      }
+      &__nbArticle {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__livraison {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__sousTotal {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $noir;
+      }
+      &__tps {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__total {
+        display: flex;
+        justify-content: space-between;
+        font-family: $fonteTitreBold;
+      }
+    }
+    &__bouton {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      @media (min-width: $bureau) {
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 90px;
+      }
+      &--btn {
+        width: 80%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        @media (min-width: $bureau) {
+          width: auto;
+          margin-left: 25px;
+        }
+      }
+      &--lien {
+        margin-bottom: 26px;
+        @media (min-width: $bureau) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.panier__conteneur__livre__info--total--prix {
+  font-family: $fonteTitreBold;
+}
+
+.invisible__prixLivraison {
+  display: none;
+}
+
+.form_panier {
+  display: flex;
+  flex-direction: column;
+}

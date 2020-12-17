@@ -1,0 +1,227 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('contenu'); ?>
+ <div id="fenetre" class="visuallyhidden">
+ <div id="fenetre" class="fenetre">
+ <div class="fenetre__image">
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/Panier/<?php echo static::e($fiche->isbn_papier); ?>_w150.png 1x,
+ liaisons/images/Panier/<?php echo static::e($fiche->isbn_papier); ?>_w300@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/Panier/<?php echo static::e($fiche->isbn_papier); ?>_w150.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($fiche->isbn_papier); ?>_w286.png 2x">
+ <img class="" src="liaisons/images/Panier/<?php echo static::e($fiche->isbn_papier); ?>_w300@2x.png" alt="Image du livre">
+ </picture>
+ </div>
+ <div class="fenetre__ajout">
+ <div class="fenetre__titre">
+ <p class="fenetre__titre__titre"><b><?php echo static::e($fiche->titre); ?></b> a été ajouté au panier!</p>
+ <i class="far fa-check-circle"></i>
+ </div>
+ <p class="espace"><b><?php echo static::e($fiche->prix_can); ?> $</b></p>
+ <div class="espace">
+ <label for="quantite">Quantité:</label>
+ <select name="quantite" id="quantite" class="quantite">
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ <option value="9">9</option>
+ <option value="10">10</option>
+ </select><br>
+ </div>
+ <button id="<?php echo static::e($fiche->id); ?>" class="boutonsPanier espace">Confirmer</button>
+ </div>
+ </div>
+ <div class="fenetre__bas">
+ <a class="boutonAction__lien" id="btnClose" href="#">Fermer la fenetre</a>
+ <a class="btnAllezPanier" href="index.php?controleur=panier&action=index">Allez au panier</a>
+ </div>
+ </div>
+ <div class="ficheLivre">
+ <div class="ficheLivre__lienRetour">
+ <a href="index.php?controleur=livre&action=<?php echo static::e($_SESSION['trier']); ?>">< Retourner à la liste de livres</a>
+ </div>
+ <div class="ficheLivre__informations">
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/FicheLivre/<?php echo static::e($fiche->isbn_papier); ?>_w964@2x.png 1x,
+ liaisons/images/FicheLivre/<?php echo static::e($fiche->isbn_papier); ?>_w964@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/FicheLivre/<?php echo static::e($fiche->isbn_papier); ?>_w964@2x.png 1x,
+ liaisons/images/FicheLivre/<?php echo static::e($fiche->isbn_papier); ?>_w574@2x.png 2x">
+ <img class="ficheLivre__informationsImages1" src="liaisons/images/FicheLivre/<?php echo static::e($fiche->isbn_papier); ?>_w964@2x.png" alt="Image du livre">
+ </picture>
+ <?php if(file_exists('liaisons/images/petiteImages/' . $fiche->isbn_papier . '_001_w150.png')): ?>
+ <div class="ficheLivre__petitesImagesMobile">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_001_w150.png" alt="Image du livre">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_002_w150.png" alt="Image du livre">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_003_w150.png" alt="Image du livre">
+ </div>
+ <?php endif; ?>
+ <div class="ficheLivre__informationsTextes">
+ <h2 class="ficheLivre__informationsTitre"><?php echo static::e($fiche->titre); ?></h2>
+ <?php $__currentLoopData = $fiche->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $artistes): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <p class="ficheLivre__informationsTextes__infos">Artiste : <span class="ficheLivre__informationsTextes__infos__texte"><a href='index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($artistes->id); ?>'><?php echo static::e($artistes->getNomPrenom()); ?></a></span></p>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php if($fiche->le_livre == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">Description : <span class="ficheLivre__informationsTextes__infos__texte">Aucune</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">Description : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->le_livre); ?></span></p>
+ <?php endif; ?>
+ <p class="ficheLivre__informationsTextes__infos">Âge minimum : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->age_min); ?> ans</span></p>
+ <p class="ficheLivre__informationsTextes__infos">Prix canadien : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->prix_can); ?>$</span></p>
+ <p class="ficheLivre__informationsTextes__infos">Prix euro : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->prix_euro); ?>€</span></p>
+ <p class="ficheLivre__informationsTextes__infos">Date de parution au Québec : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->date_parution_quebec); ?></span></p>
+ <p class="ficheLivre__informationsTextes__infos">Date de parution en France : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->date_parution_france); ?></span></p>
+ <?php if($fiche->arguments_commerciaux == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">Arguments commerciaux :  <span class="ficheLivre__informationsTextes__infos__texte">Aucuns</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">Arguments commerciaux : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->arguments_commerciaux); ?></span></p>
+ <?php endif; ?>
+ <?php if($fiche->statut == 1): ?>
+ <p class="ficheLivre__informationsTextes__infos">Statut : <span class="ficheLivre__informationsTextes__infos__texte">Régulier</span></p>
+ <?php else: ?>
+ <?php if($fiche->statut == 2): ?>
+ <p class="ficheLivre__informationsTextes__infos">Statut : <span class="ficheLivre__informationsTextes__infos__texte">Nouveautés</span></p>
+ <?php else: ?>
+ <?php if($fiche->statut == 3): ?>
+ <p class="ficheLivre__informationsTextes__infos">Statut : <span class="ficheLivre__informationsTextes__infos__texte">À paraître prochainement</span></p>
+ <?php endif; ?>
+ <?php endif; ?>
+ <?php endif; ?>
+ <?php if($fiche->format == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">Format : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">Format : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->format); ?></span></p>
+ <?php endif; ?>
+ <p class="ficheLivre__informationsTextes__infos">Tirage : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->tirage); ?></span></p>
+ <?php if($fiche->isbn_papier == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN papier : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN papier : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->isbn_papier); ?></span></p>
+ <?php endif; ?>
+ <?php if($fiche->isbn_pdf == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN Pdf : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN Pdf : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->isbn_pdf); ?></span></p>
+ <?php endif; ?>
+ <?php if($fiche->isbn_epub == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN Epub : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">ISBN Epub : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->isbn_epub); ?></span></p>
+ <?php endif; ?>
+ <?php if($fiche->url_audio == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">URL audio : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">URL audio : <span class="ficheLivre__informationsTextes__infos__texte"><a href="<?php echo static::e($fiche->url_audio); ?>"<?php echo static::e($fiche->url_audio); ?>></a></span></p>
+ <?php endif; ?>
+ <p class="ficheLivre__informationsTextes__infos">Catégorie : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->getCategories()->nom); ?></span></p>
+ <?php if($fiche->type_impression_id == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">Type d'impression : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">Type d'impression : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->getImpressions()->nom); ?></span></p>
+ <?php endif; ?>
+ <?php if($fiche->type_couverture_id == null): ?>
+ <p class="ficheLivre__informationsTextes__infos">Type de couverture : <span class="ficheLivre__informationsTextes__infos__texte">Aucun</span></p>
+ <?php else: ?>
+ <p class="ficheLivre__informationsTextes__infos">Type de couverture : <span class="ficheLivre__informationsTextes__infos__texte"><?php echo static::e($fiche->getCouvertures()->nom); ?></span></p>
+ <?php endif; ?>
+ <div class="ficheLivre__informationsTextes__bouton">
+ <button id="<?php echo static::e($fiche->id); ?>" class="boutons boutons--btnGeneral">Ajouter au panier</button>
+ </div>
+ </div>
+ <?php if(file_exists('liaisons/images/petiteImages/' . $fiche->isbn_papier . '_001_w150.png')): ?>
+ <div class="ficheLivre__petitesImagesDesktop">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_001_w150.png" alt="Image du livre">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_002_w150.png" alt="Image du livre">
+ <img src="liaisons/images/petiteImages/<?php echo static::e($fiche->isbn_papier); ?>_003_w150.png" alt="Image du livre">
+ </div>
+ <?php endif; ?>
+ </div>
+ <div class="ficheLivre__auteur">
+ <h2 class="ficheLivre__auteur__titre">Artiste(s)</h2>
+ <div class="ficheLivre__auteur__liste">
+ <?php $__currentLoopData = $fiche->getAuteurs(); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $artistes): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="ficheLivre__auteur__liste__fiche">
+ <a href='index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($artistes->id); ?>'>
+ <?php if(file_exists('liaisons/images/ListeAuteurs/' . $artistes->nom . '_w235.png')): ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeAuteurs/<?php echo static::e($artistes->nom); ?>_w235.png 1x,
+ liaisons/images/ListeAuteurs/<?php echo static::e($artistes->nom); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeAuteurs/<?php echo static::e($artistes->nom); ?>_w286.png 1x,
+ liaisons/images/ListeAuteurs/<?php echo static::e($artistes->nom); ?>_w574@2x.png 2x">
+ <img class="ficheLivre__auteur__liste__fiche__img" src="liaisons/images/ListeAuteurs/<?php echo static::e($artistes->nom); ?>_w574@2x.png" alt="Image de l'artiste">
+ </picture>
+ <?php else: ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/auteur.svg 1x,
+ liaisons/images/auteur.svg 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/auteur.svg 1x,
+ liaisons/images/auteur.svg 2x">
+ <img class="ficheLivre__auteur__liste__fiche__img" src="liaisons/images/auteur.svg" alt="Image de l'artiste">
+ </picture>
+ <?php endif; ?>
+ <div class="ficheLivre__auteur__liste__fiche__titre">
+ <p class="ficheLivre__auteur__liste__fiche__titre__nom"><?php echo static::e($artistes->getNomPrenom()); ?></p>
+ </div>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <div class="ficheLivre__memeAuteur">
+ <h2 class="ficheLivre__memeAuteurTitre">Livres du même artiste</h2>
+
+ <div class="ficheLivre__memeAuteur__liste">
+ <?php $__currentLoopData = $livres; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $livre): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="container ficheLivre__memeAuteur__listeLivre">
+ <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($livre->id); ?>&idAuteur=<?php echo static::e($artistes->id); ?>">
+ <div class="overlay">
+ <h3 class="text ficheLivre__memeAuteur__listeLivre__titre titreLivresFiche"><?php echo static::e($livre->titre); ?></h3>
+ <p class="texteCategorieFicheLivre ficheLivre__memeAuteur__listeLivre__categorie">[ <?php echo static::e($livre->getCategories()->nom); ?> ]</p>
+ </div>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($livre->isbn_papier); ?>_w574@2x.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($livre->isbn_papier); ?>_w574@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeLivres/<?php echo static::e($livre->isbn_papier); ?>_w574@2x.png 1x,
+ liaisons/images/ListeLivres/<?php echo static::e($livre->isbn_papier); ?>_w574@2x.png 2x">
+
+ <img class="ficheLivre__memeAuteur__listeLivre__img" src="liaisons/images/ListeLivres/<?php echo static::e($livre->isbn_papier); ?>_w574@2x.png" alt="Image du livre">
+ </picture>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <div class="ficheLivre__reconnaissance">
+ <h2 class="ficheLivre__reconnaissance__titre">Prix et nominations</h2>
+ <div class="ficheLivre__reconnaissance__prix">
+ <?php if($reconnaissances == null): ?>
+ <p class="ficheLivre__reconnaissance__prix__nom">Aucune nominations</p>
+ <?php else: ?>
+ <p class="ficheLivre__reconnaissance__prix__nom"><?php echo static::e($reconnaissances[0]->la_reconnaissance); ?></p>
+ <?php endif; ?>
+ </div>
+ </div>
+ <div class="ficheLivre__boutonsActions">
+ <?php if($fiche->id == 1): ?>
+ <button disabled class="boutons boutons--btnGeneral" name="btPrecedent"><span class="icones icone--precedent"></span>Livre précédent</button>
+ <?php else: ?>
+ <button class="boutons boutons--btnGeneral" name="btPrecedent" onclick="window.location.href='index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($fiche->id - 1); ?>&idAuteur=<?php echo static::e($artistes->id); ?>';"><span class="icones icone--precedent"></span>Livre précédent</button>
+ <?php endif; ?>
+ <?php if($fiche-> id == 146): ?>
+ <button disabled class="boutons boutons--btnGeneral" name="btSuivant"><span class="icones icone--suivant"></span>Livre suivant</button>
+ <?php else: ?>
+ <button class="boutons boutons--btnGeneral" name="btSuivant" onclick="window.location.href='index.php?controleur=livre&action=fiche&idLivre=<?php echo static::e($fiche->id + 1); ?>&idAuteur=<?php echo static::e($artistes->id); ?>';"><span class="icones icone--suivant"></span>Livre suivant</button>
+ <?php endif; ?>
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('gabarit'); } ?>

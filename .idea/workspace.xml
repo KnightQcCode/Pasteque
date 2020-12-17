@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a2415f7-2de9-4e4d-a7bb-ddfcf972cccb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.sass-cache/92d36c45f775f79cce14cfa003ee2bfed0e14753/_pied.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/92d36c45f775f79cce14cfa003ee2bfed0e14753/_pied.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.sass-cache/ad30c793807b8a4f0fc0616162a30773adef4fd8/_variables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/ad30c793807b8a4f0fc0616162a30773adef4fd8/_variables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.sass-cache/d4bcacf32552508dd8c1b538ee01e578c1348f2f/_boutons.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/d4bcacf32552508dd8c1b538ee01e578c1348f2f/_boutons.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/liaisons/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/liaisons/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/liaisons/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/liaisons/css/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/cache/a3648f8bf5aa3831fbdad1ff5a17842578326200.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/cache/a3648f8bf5aa3831fbdad1ff5a17842578326200.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/liaisons/scss/base/_boutons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/liaisons/scss/base/_boutons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/liaisons/scss/grille/_pied.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/liaisons/scss/grille/_pied.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/liaisons/scss/utilitaires/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/liaisons/scss/utilitaires/_variables.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/eftec/bladeone" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1hHkm6G4N7GR1qERLodsJYlrfw3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Sites\pasteque_goyaves\public" />
+      <recent name="C:\Sites\pasteque_goyaves\ressources" />
+      <recent name="C:\Sites\pasteque_goyaves" />
+      <recent name="C:\MAMP\htdocs\Cegep\RPNI3\gr1_goyaves_v3\demo1\ressources\vues\livres" />
+      <recent name="$PROJECT_DIR$/app/Controleurs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a2415f7-2de9-4e4d-a7bb-ddfcf972cccb" name="Default" comment="" />
+      <created>1566137820816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566137820816</updated>
+      <workItem from="1566137822674" duration="816000" />
+      <workItem from="1566138994639" duration="2592000" />
+      <workItem from="1566224577372" duration="233000" />
+      <workItem from="1566229711559" duration="135000" />
+      <workItem from="1567456112950" duration="2169000" />
+      <workItem from="1567528547690" duration="111000" />
+      <workItem from="1567783162553" duration="1248000" />
+      <workItem from="1567784620559" duration="1303000" />
+      <workItem from="1567786167106" duration="1112000" />
+      <workItem from="1567787318335" duration="551000" />
+      <workItem from="1567788191021" duration="289000" />
+      <workItem from="1567788823907" duration="65000" />
+      <workItem from="1568292771572" duration="63000" />
+      <workItem from="1599675565324" duration="43000" />
+      <workItem from="1600232263027" duration="5000" />
+      <workItem from="1600789666076" duration="28000" />
+      <workItem from="1603480092021" duration="1471000" />
+<<<<<<< HEAD
+      <workItem from="1604075756365" duration="1111000" />
+=======
+      <workItem from="1604075756365" duration="1785000" />
+>>>>>>> 235f290571349131f8c0c14191bcc602e6e777cd
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="781" y="345" key="SettingsEditor" timestamp="1604338347619">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604338347619" />
+    <state x="1208" y="429" key="run.anything.popup" timestamp="1604340619330">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1208" y="429" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604340619330" />
+  </component>
+</project>

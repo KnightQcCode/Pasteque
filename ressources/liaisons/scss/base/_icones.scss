@@ -1,0 +1,50 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+.icone__afficher,.icone__cacher {
+  transition: all 0.5s ease;
+  color: $noir;
+  &:hover {
+    color: #425B5E;
+  }
+  &:active {
+    color: #1F0A29;
+  }
+}
+.icone__fb, .icone__insta, .icone__tt {
+  color: $noir;
+}
+
+.icone__insta:hover {
+  transition: all 0.5s ease;
+  color: #DD2A7B;
+}
+
+.icone__fb:hover {
+  transition: all 0.5s ease;
+  color: #4267B2;
+}
+
+.icone__tt:hover {
+  transition: all 0.5s ease;
+  color: #1DA1F2;
+}
+.svg-inline--fa.fa-hotjar  {
+  position: relative;
+  top: -35px;
+  left: -5px;
+  float: right;
+  color: $noir;
+  z-index: 0;
+  padding: 5px;
+  background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+.spriteRETRO {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 5px;
+  @media (min-width: $bureau) {
+    padding-right: 10px;
+  }
+}

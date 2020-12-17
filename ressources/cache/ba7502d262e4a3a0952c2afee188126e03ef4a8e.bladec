@@ -1,0 +1,52 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('contenu'); ?>
+ <h2 class="nomPage__auteurs"><?php echo static::e($titrePage); ?></h2>
+ <p class="filArian"><a href="index.php?controleur=site&action=accueil">Accueil</a> > Liste des artistes</p>
+ <div class="rangee">
+ <div class="cols_8_de_12">
+ <form class="listeLivres__form" method="POST">
+ <label for="tri"></label>
+ <select id="tri" name="tri" class="listeLivres__form__tri__liste" onchange="document.location.href='index.php?controleur=auteur&action=' + this.value">
+ <option value="index">Trier par</option>
+ <option value="trierAuteurAZ">Trier par artistes A-Z</option>
+ <option value="trierAuteurZA">Trier par artistes Z-A</option>
+ </select>
+ </form>
+ <div class="auteur__flex">
+ <?php $__currentLoopData = $artistes; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $artiste): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="liste">
+ <div class="liste__auteur">
+ <a class="liste__auteur--itemLiens" href='index.php?controleur=auteur&action=fiche&idAuteur=<?php echo static::e($artiste->id); ?>'>
+ <?php if(file_exists('liaisons/images/ListeAuteurs/' . $artiste->nom . '_w235.png')): ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/ListeAuteurs/<?php echo static::e($artiste->nom); ?>_w235.png 1x,
+ liaisons/images/ListeAuteurs/<?php echo static::e($artiste->nom); ?>_w470@2x.png 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/ListeAuteurs/<?php echo static::e($artiste->nom); ?>_w286.png 1x,
+ liaisons/images/ListeAuteurs/<?php echo static::e($artiste->nom); ?>_w574@2x.png 2x">
+ <img class="liste__auteur--img" src="liaisons/images/auteur.svg" alt="Image de l'artiste" onerror="this.onerror=null;this.src='liaisons/images/auteur.svg';">
+ </picture>
+ <?php else: ?>
+ <picture>
+ <source media="(min-width:600px)" srcset="liaisons/images/auteur.svg 1x,
+ liaisons/images/auteur.svg 2x">
+
+ <source media="(max-width:599px)" srcset="liaisons/images/auteur.svg 1x,
+ liaisons/images/auteur.svg 2x">
+ <img class="liste__auteur--img" src="liaisons/images/auteur.svg" alt="Image de l'artiste">
+ </picture>
+ <?php endif; ?>
+ <p class="liste__auteur--item"><?php echo static::e($artiste->getNomPrenom()); ?></p>
+ </a>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="pagination__auteurs">
+ <?php echo $this->runChild('fragments.pagination'); ?>
+ </div>
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('gabarit'); } ?>

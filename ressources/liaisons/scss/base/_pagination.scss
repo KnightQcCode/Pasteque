@@ -1,0 +1,53 @@
+/**
+* @author Jonathan Collard - jonath2897@gmail.com
+*/
+.boutonAction{
+  background-color: #FF8B8B;
+  padding: 10px;
+  border-radius: 3px;
+  color: $blanc;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 8px;
+  &__lien{
+    text-decoration: none;
+    color: $blanc;
+  }
+  &--desactiver{
+    background-color: #FFCCCC;
+    padding: 10px;
+    border-radius: 3px;
+    color: $blanc;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 13px;
+  }
+}
+.progressionPage{
+  padding: 15px;
+  background-color: #62BFAD;
+  border-radius: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 13px;
+  color: $blanc;
+}
+.premier:hover {
+  transition: all 0.5s ease;
+  transform: translateX(-8px);
+}
+
+.precedent:hover {
+  transition: all 0.5s ease;
+  transform: translateX(-8px);
+}
+
+.suivant:hover {
+  transition: all 0.5s ease;
+  transform: translateX(8px);
+}
+
+.dernier:hover {
+  transition: all 0.5s ease;
+  transform: translateX(8px);
+}

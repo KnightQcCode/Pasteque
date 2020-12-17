@@ -1,0 +1,110 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+html {
+  font-size: 62.5%;
+}
+body {
+  @include fontSize(16px);
+  font-family: $fontePrimaire;
+  line-height: 1.25em;
+  @media (min-width:$bureau) {
+    line-height: 1.375em;
+  }
+}
+h1, .h1 {
+  @include fontSize(32px);
+  line-height: 1.25em;
+  font-family: $fonteTitreMedium;
+  @media (min-width:$bureau) {
+    @include fontSize(48px);
+    line-height: 1.05em;
+  }
+}
+h2, .h2{
+  @include fontSize(26px);
+  padding: 10px;
+  line-height: 1.15em;
+  text-align: center;
+  background-color: $saumonPale;
+  color: $blanc;
+  //@include ombrePortee;
+  @media (min-width: $bureau) {
+    @include fontSize(32px);
+    line-height: 1.25em;
+    text-align: left;
+  }
+}
+h3, .h3 {
+  @include fontSize(22px);
+  line-height: 1.14em;
+  font-family: $fonteTitreMedium;
+  @media (min-width: $bureau) {
+    @include fontSize(28px);
+    line-height: 1.25em;
+  }
+}
+.h3-bold {
+  @include fontSize(22px);
+  margin: 0;
+  line-height: 1.14em;
+  font-family: $fonteTitreBold;
+  @media (min-width: $bureau) {
+    @include fontSize(28px);
+    line-height: 1.25em;
+  }
+}
+h4, .h4 {
+  @include fontSize(18px);
+  line-height: 1.13em;
+  font-family: $fonteTitreBold;
+  @media (min-width: $bureau) {
+    @include fontSize(22px);
+    line-height: 1.25em;
+  }
+}
+.accueil__aParaitre__livres__fiche__date {
+  @include fontSize(18px);
+  font-family: $fonteTitreMedium;
+  text-align: center;
+  @media (min-width: $bureau) {
+    @include fontSize(14px);
+  }
+}
+.titreLivres{
+  font-family: $fontePrimaire;
+  @media (min-width: $bureau) {
+    @include fontSize(20px);
+  }
+}
+.titreLivresAuteur,.titreLivresFiche,.titreLivresNouveautes,.titreLivresAParaitre,.titreLivresListe{
+  font-family: $fontePrimaire;
+  margin-top: 40px;
+  @media (min-width: $bureau) {
+    @include fontSize(20px);
+  }
+}
+.connexion__form__courriel__infos label , .connexion__form__motDePasse__infos label {
+  @include fontSize(26px);
+  font-family: $fonteTitreMedium;
+  @media (min-width: $bureau) {
+    @include fontSize(28px);
+  }
+}
+.ficheLivre__reconnaissance__prix__nom {
+  @include fontSize(18px);
+  font-family: $fonteTitreMedium;
+  @media (min-width: $bureau) {
+    @include fontSize(20px);
+  }
+}
+.listeLivres__gallerie__categories__telechargement__titre {
+  @include fontSize(18px);
+}
+.nomAuteurs__titre {
+  @include fontSize(18px);
+  @media (min-width: $bureau) {
+    @include fontSize(14px);
+  }
+}

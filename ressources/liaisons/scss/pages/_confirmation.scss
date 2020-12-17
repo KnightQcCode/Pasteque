@@ -1,0 +1,155 @@
+/**
+* @author Jonathan Collard - jonath2897@gmail.com
+*/
+.flex{
+  display: flex;
+  margin-left: 8.5%;
+  margin-top: 25.5px;
+}
+
+
+.confirmation{
+  color: $noir;
+  width: span(4 of 4);
+  @media (min-width: $bureau){
+    width: span(8 of 12);
+  }
+  &__titre{
+    margin: 0;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: left;
+    font-size: 2.3rem;
+    color: $noir;
+    @media (min-width: $bureau){
+      text-align: left;
+    }
+
+
+  }
+  &__numero{
+    font-size: 24px;
+    margin: 0;
+    font-family: $fontePrimaire;
+    padding-left: 10px;
+
+
+  }
+}
+ /** REMERCIEMENT **/
+.remerciement{
+  border-radius: 12px;
+  background-color: white;
+  width: span(4 of 4);
+  display: flex;
+  margin: 5% auto auto;
+  @media (min-width: $bureau){
+    width: span(8 of 12);
+  }
+
+  &__contenu{
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  &__para{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+/** LIVRAISON **/
+
+.livraison{
+  width: span(4 of 4);
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  margin: 5% auto auto;
+  @media (min-width: $bureau){
+    width: span(8 of 12);
+  }
+
+  &__contenu{
+    margin: 2% auto;
+  }
+}
+
+/** DÉTAILS COMMANDE **/
+
+.details{
+  border-radius: 12px;
+  background-color: white;
+  width: span(4 of 4);
+  display: flex;
+  margin: 5% auto auto;
+  @media (min-width: $bureau){
+    width: span(8 of 12);
+  }
+
+  &__contenu{
+    margin: auto;
+  }
+
+  &__info{
+    float: right;
+  }
+  &__infoPara{
+    margin-top: 0;
+    margin-bottom: 15%;
+    margin-left: 15px;
+    font-size: 20px;
+  }
+  &__total{
+    display: flex;
+    justify-content: flex-end;
+
+    &__nbreArticle{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__livraison{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__sousTotal{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__tps{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__total{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+
+.fa-check-circle{
+  color: green;
+  font-size: 20px;
+  margin-left: 35px;
+}
+.imprimer{
+  display: flex;
+  justify-content: center;
+  margin: 2% auto auto;
+}
+.hyperlien{
+  text-align: center;
+  color: $noir;
+}
+
+.cinq{
+  margin-left: 10%;
+}
+
+.details__info{
+  margin-left: 20px;
+}
+
+.details__contenu__livre {
+  display: flex;
+}

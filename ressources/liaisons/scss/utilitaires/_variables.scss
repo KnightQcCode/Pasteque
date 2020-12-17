@@ -1,0 +1,63 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+/** Polices de caractères **/
+@font-face {
+  font-family:'Rubik Regular';
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Regular.ttf') format('ttf');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Regular.woff') format('woff');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Regular.woff2') format('woff2');
+
+}
+@font-face {
+  font-family:'Rubik Medium';
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Medium.ttf') format('ttf');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Medium.woff') format('woff');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Medium.woff2') format('woff2');
+
+}
+@font-face {
+  font-family:'Rubik Bold';
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Bold.ttf') format('ttf');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Bold.woff') format('woff');
+  src:url('../../../public/liaisons/fonts/Rubik/Rubik-Bold.woff2') format('woff2');
+}
+$fontePrimaire: 'Rubik Regular';
+$fonteTitreMedium: 'Rubik Medium';
+$fonteTitreBold:'Rubik Bold', Arial, sans-serif;
+
+/** Palette de couleurs **/
+
+// Utiliser http://chir.ag/projects/name-that-color
+// pour obtenir des noms uniques et mémorisables
+// Permettez-vous d'utiliser un nom de variable plus explicite
+// si la suggestion de name-that-color est trop étrange
+
+/* Couleurs de base */
+
+$noir: #000000;
+$blanc: #ffffff;
+$saumonPale: #B95555;
+$saumonFonce: #F07070;
+$rougeFonce : #BC4B4B;
+$vertMarin : #62BFAD;
+$vertMarinFonce : #398172;
+$vertMarinPale : #62BFAD;
+$vertMarin : #398172;
+$vertMarinFonce : #2B5E53;
+$bleuFonce : #221FBC;
+$bleuPale : #192FF8;
+
+/** Autres couleurs **/
+$fondBody : #F9F7E8;
+$noirOmbrePortee :transparentize($noir,0.75);
+$contourBtnFooter : #2B5E53;
+$contourBtnGeneral : #B9A1A1;
+$btnFooterDisable : #94DCCD;
+$btnGeneralDisable : #FFCCCC;
+/** Couleurs icônes **/
+
+
+/** Points de rupture**/
+$bureau : 600px;

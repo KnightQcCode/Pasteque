@@ -1,0 +1,90 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+.filArian {
+  display: none;
+  @media (min-width: $bureau) {
+    display: block;
+    padding-top: 25px;
+    padding-left: 10px;
+    width: span(5 of 12);
+  }
+}
+.listeLivres__form select {
+  margin-bottom: 30px;
+}
+.tri__liste, .listeLivres__form__tri__liste {
+  width: span(4 of 4);
+  text-align: center;
+  @media (min-width: $bureau) {
+    padding-left: 10px;
+    text-align: left;
+    width: span(4 of 12);
+  }
+  &Item {
+    padding-bottom: 30px;
+    padding-top: 25px;
+    @media (min-width: $bureau) {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+
+  }
+}
+
+.auteur__flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nomPage__auteurs {
+  width: span(4 of 4);
+  @media (min-width: $bureau) {
+    width: span(6 of 12);
+  }
+}
+.liste {
+  width: span(2 of 4);
+  margin-bottom: 75px;
+  @media (min-width: $bureau) {
+    width: span(3 of 12);
+    margin-bottom: 50px;
+  }
+  &__auteur {
+    &--img {
+      width: 100%;
+      @media (min-width: $bureau) {
+        width: span(12 of 12);
+      }
+    }
+    &--item {
+      position: relative;
+      top: -55px;
+      margin-bottom: -60px;
+      padding: 10px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      @media (min-width: $bureau) {
+        top: -59px;
+        font-size: 18px;
+      }
+    }
+    &--itemLiens {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.liste:nth-child(4n) {
+  margin-right: 0;
+}
+
+.pagination__auteurs {
+  display: flex;
+  justify-content: center;
+}
+

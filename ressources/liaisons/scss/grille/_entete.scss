@@ -1,0 +1,228 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+*/
+//BACKGROUND COLOR DU HEADER
+header {
+  background-color: white;
+}
+
+//CONTENU AU DESSU DE LA NAV
+.contenu__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 166px;
+}
+
+.logo {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  width: span(3 of 4);
+  @media (min-width: $bureau) {
+    width: span(4 of 12);
+  }
+}
+
+.logo img {
+  width: 100%;
+}
+
+//// NAVIGATION
+.navigation {
+  background-color: $vertMarinPale;
+  &__liste {
+    @media (min-width: $bureau) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    &--item {
+      padding: 19px;
+      border-bottom: solid 1px #707070;
+      @media (min-width: $bureau) {
+        border: none;
+        align-self: center;
+        //line-height: 40px;
+
+      }
+    }
+  }
+}
+
+.navigation__liste--item:hover {
+  background-color:#45a996;
+  transition: ease 1s;
+  font-size: 17px;
+}
+
+.navigation__liste--item a{
+  text-decoration: none;
+  color: white;
+}
+
+//SECTION A DROITE DANS L'ENTETE
+.sinscireRechercher {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  @media (min-width: $bureau) {
+    display: flex;
+  }
+}
+
+.sinscireRechercher_mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+  @media (min-width: $bureau) {
+    display: none;
+    padding-bottom: 0;
+  }
+}
+
+//S'INSCRIRE, SE CONNECTER, PANIER
+.sinscrirePanier {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  color: white;
+  @media (min-width: $bureau) {
+    justify-content: flex-end;
+    color: black;
+  }
+  &__panier {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    @media (min-width: $bureau) {
+      padding: 0;
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+.sinscrirePanier__panier--mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  color: white;
+  @media (min-width: $bureau) {
+    display: none;
+  }
+}
+
+.form__mobile {
+  @media (min-width: $bureau) {
+    display: none;
+  }
+}
+
+.navigation__liste__section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  @media (min-width: $bureau) {
+  display: none;
+  }
+  &--recherche {
+    color: white;
+  }
+}
+
+.panier__lien {
+  color: white;
+  text-decoration: none;
+  @media (min-width: $bureau) {
+    color: black;
+  }
+}
+
+.sinscrirePanier a {
+  color: white;
+  text-decoration: none;
+  @media (min-width: $bureau) {
+    color: black;
+  }
+}
+
+.sinscrirePanier p, .sinscrirePanier_mobile p {
+  margin: 0 5px;
+}
+
+//CHAMP DE RECHERCHE
+.champRechercher {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 45px;
+  &__label {
+    display: none;
+  }
+  &__input {
+    height: 35px;
+    border: solid 1px black;
+    border-radius: 0px 5px 5px 0px;
+  }
+  &__parSelect {
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    border: solid 1px black;
+    margin-right: -5px;
+    font-size: 16px;
+  }
+  &__search {
+    border: none;
+    background: none;
+  }
+}
+
+.menuHamburger {
+  display: initial;
+  @media (min-width: $bureau) {
+    display: none;
+  }
+}
+
+.nav {
+  @media (min-width: $bureau) {
+    display: initial;
+  }
+}
+
+#pencet{
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+#pencet span{
+  background-color:black;
+  width:2em;
+  height:.2em;
+  margin:0.26em 0;
+  display:block;
+  transition: all .4s ease;
+  transform-origin:0 0;
+}
+
+.Diam span:nth-child(1) {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+.Diam span:nth-child(2) {
+  Transform: scaleX(0);
+}
+
+.Diam span:nth-child(3) {
+  transform: rotate(-45deg) translate(1px, 0);
+}
+
+.menu__fermer {
+  display: none;
+  @media (min-width: $bureau) {
+    display: initial;
+  }
+}

@@ -1,0 +1,114 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+*/
+.livraison__titre {
+  width: span(4 of 4);
+  @media (min-width: $bureau) {
+    width: span(4 of 12);
+    margin-left: 17%;
+  }
+}
+.btnLivraison {
+  margin: 15px auto 0;
+  display: block;
+}
+.pageLivraison {
+  background-color: white;
+  width: span(4 of 4);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  @media (min-width: $bureau) {
+    width: span(8 of 12)
+  }
+  &__identification {
+    &__sousTitre {
+      margin-bottom: 0;
+    }
+    &__nom {
+      display: flex;
+      margin-bottom: 10px;
+      flex-direction: column;
+      &--input {
+        border-radius: 5px;
+        width: 70%;
+      }
+    }
+    &__courriel {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 70%;
+      }
+    }
+    &__motDePasse {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 70%;
+      }
+    }
+  }
+  &__adresseLivraison {
+    &__sousTitre {
+      margin-bottom: 0;
+    }
+    &__adresse {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 75%;
+      }
+    }
+    &__ville {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 70%;
+      }
+    }
+    &__province {
+      margin-bottom: 10px;
+      &__label {
+        display: flex;
+        flex-direction: column;
+        &--input {
+          border-radius: 5px;
+          width: 70%;
+        }
+      }
+    }
+    &__pays {
+      margin-bottom: 10px;
+      &__label {
+        display: flex;
+        flex-direction: column;
+        &--input {
+          border-radius: 5px;
+          width: 70%;
+        }
+      }
+    }
+    &__codePostal {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      &--input {
+        border-radius: 5px;
+        width: 75%;
+      }
+    }
+    &__memeAdresse {
+      margin-bottom: 10px;
+    }
+  }
+}

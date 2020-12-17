@@ -1,0 +1,26 @@
+{
+  "name": "pasteque_goyaves",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://timgit2.cegep-ste-foy.qc.ca/1763467/pasteque_goyaves.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@types/jquery": "^3.5.4",
+    "jquery": "^3.5.1",
+    "normalize.scss": "^0.1.0",
+    "requirejs": "^2.3.6",
+    "susy": "^3.0.6"
+  }
+}

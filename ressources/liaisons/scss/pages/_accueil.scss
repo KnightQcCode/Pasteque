@@ -1,0 +1,365 @@
+/**
+* @author Alexandre Bédard - alexandre.bedard123@gmail.com
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+* @author Jonathan Collard - jonath2897@gmail.com
+*/
+.accueil {
+  &__nouveautes {
+    &__titre {
+      width: span(4 of 4);
+      @media (min-width: $bureau) {
+        width: span(5 of 12);
+      }
+    }
+    &__livres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (min-width: $bureau) {
+      justify-content: space-around;
+    }
+      & > :only-child {
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $bureau) {
+          margin-left: 0;
+        }
+      }
+      &__fiche {
+        width: span(2 of 4);
+        margin-bottom: 75px;
+        @media (min-width: $bureau) {
+          width: span(3 of 12);
+        }
+        &__vignette {
+          @include ombrePortee;
+          &__titre {
+            &__categorie {
+              color: $blanc;
+              margin-top: 75px;
+              text-align: center;
+              @media (min-width: $bureau) {
+                margin-top: 110px;
+              }
+            }
+            &__nom {
+              padding-top: 10px;
+              padding-bottom: 10px;
+              text-align: center;
+              color: $blanc;
+              @media (min-width: $bureau) {
+                padding-top: 50px;
+                margin-bottom: 0;
+              }
+            }
+            &__img {
+              width: 100%;
+            }
+          }
+          &__auteurs {
+            padding: 10px;
+            text-align: center;
+            background-color: $noir;
+            opacity: 60%;
+            @media (min-width: $bureau) {
+            }
+            & a {
+              text-decoration: none;
+            }
+            &__nom {
+              color: $blanc;
+              //opacity: 100%;
+              @media (min-width: $bureau) {
+                margin-top: 8px;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__afficherTout {
+      width: span(4 of 4);
+      text-align: center;
+      margin-bottom: 25px;
+      @media (min-width: $bureau) {
+        margin-left: auto;
+        width: span(4 of 12);
+      }
+    }
+  }
+  &__aParaitre {
+    &__titre {
+      width: span(4 of 4);
+      @media (min-width: $bureau) {
+        width: span(7 of 12);
+      }
+    }
+    &__livres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @media (min-width: $bureau) {
+        justify-content: space-around;
+      }
+      & > :only-child {
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $bureau) {
+          margin-left: 0;
+        }
+      }
+      &__fiche {
+        width: span(2 of 4);
+        margin-bottom: 75px;
+        @media (min-width: $bureau) {
+          width: span(3 of 12);
+        }
+        &__vignette {
+          @include ombrePortee;
+          &__titre {
+            &__categorie {
+              color: $blanc;
+              margin-top: 75px;
+              text-align: center;
+              @media (min-width: $bureau) {
+                margin-top: 110px;
+              }
+            }
+            &__nom {
+              padding-top: 10px;
+              padding-bottom: 10px;
+              text-align: center;
+              color: $blanc;
+              @media (min-width: $bureau) {
+                padding-top: 50px;
+                margin-bottom: 0;
+              }
+            }
+            &__img {
+              width: 100%;
+            }
+          }
+          &__auteurs {
+            padding: 10px;
+            text-align: center;
+            background-color: $noir;
+            opacity: 60%;
+            @media (min-width: $bureau) {
+              top: -57px;
+            }
+            & a {
+              text-decoration: none;
+            }
+            &__nom {
+              color: $blanc;
+              @media (min-width: $bureau) {
+                margin-top: 8px;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__afficherTout {
+      width: span(4 of 4);
+      text-align: center;
+      margin-bottom: 25px;
+      @media (min-width: $bureau) {
+        margin-left: auto;
+        width: span(4 of 12);
+      }
+    }
+  }
+  &__evenements{
+    &__titre {
+      width: span(4 of 4);
+      @media (min-width: $bureau) {
+        width: span(6 of 12);
+      }
+    }
+    &__liste {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &__sections {
+        width: span(4 of 4);
+        background-color: $fondBody;
+        border: $noir solid 1px;
+        z-index: 1;
+        margin-bottom: 50px;
+        @include ombrePortee;
+        @media (min-width: $bureau) {
+          width: span(6 of 12);
+        }
+        &__carte {
+          margin-bottom: 35px;
+          &__img {
+            width: span(4 of 4);
+            @media (min-width: $bureau) {
+              width: span(6 of 6);
+              & img {
+                width: 100%;
+              }
+            }
+          }
+          &__titre,&__editeur  {
+            width: span(4 of 4);
+            margin: 0;
+            text-align: center;
+            padding: 10px;
+            @media (min-width: $bureau) {
+              width: span(6 of 6);
+            }
+          }
+          &__description {
+            width: span(4 of 4);
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            @media (min-width: $bureau) {
+              width: span(6 of 6);
+            }
+          }
+          &__reseauxSociaux {
+            position: relative;
+            text-align: center;
+            color: $blanc;
+            width: span(4 of 4);
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+            @media (min-width: $bureau) {
+              width: span(3 of 6);
+            }
+            &__icones {
+              text-decoration: none;
+            }
+          }
+        }
+        &__date {
+          padding: 10px;
+          text-align: center;
+          background-color: $noir;
+          color: $blanc;
+          opacity: 60%;
+          width: span(4 of 4);
+          @media (min-width: $bureau) {
+            margin: 0;
+            width: span(6 of 6);
+          }
+        }
+      }
+    }
+    &__afficherTout {
+      width: span(4 of 4);
+      text-align: center;
+      margin-bottom: 30px;
+      @media (min-width: $bureau) {
+        margin-left: auto;
+        width: span(5 of 12);
+      }
+    }
+  }
+  &__actualites{
+    &__titre {
+      width: span(4 of 4);
+      @media (min-width: $bureau) {
+        width: span(6 of 12);
+      }
+    }
+    &__liste {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &__carte {
+        width: span(4 of 4);
+        background-color: $fondBody;
+        border: $noir solid 1px;
+        z-index: 1;
+        margin-bottom: 50px;
+        @include ombrePortee;
+        @media (min-width: $bureau) {
+          width: span(6 of 12);
+        }
+        &__img {
+         display: block;
+         width: 100%;
+         height: auto;
+        }
+        &__description {
+          width: span(4 of 4);
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          @media (min-width: $bureau) {
+            width: span(6 of 6);
+          }
+        }
+        &__date {
+          top: 64px;
+          padding: 10px;
+          text-align: center;
+          background-color: $noir;
+          background-color: $noir;
+          color: $blanc;
+          opacity: 60%;
+          width: span(4 of 4);
+          z-index: -1;
+          margin-top: 15px;
+          margin-bottom: 0;
+          @media (min-width: $bureau) {
+            top: 64px;
+            width: span(6 of 6);
+          }
+        }
+        &__reseauxSociaux {
+          position: relative;
+          text-align: center;
+          color: $blanc;
+          width: span(4 of 4);
+          display: flex;
+          justify-content: space-evenly;
+          margin: auto;
+          @media (min-width: $bureau) {
+            width: span(3 of 6);
+          }
+          &__icones {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &__afficherTout {
+      width: span(4 of 4);
+      text-align: center;
+      margin-bottom: 30px;
+      @media (min-width: $bureau) {
+        margin-left: auto;
+        width: span(5 of 12);
+      }
+    }
+  }
+}
+.textCategorie {
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.accueil__actualites__liste__carte__titre, .accueil__evenements__liste__carte__editeur  {
+  width: span(4 of 4);
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  @media (min-width: $bureau) {
+    width: span(6 of 6);
+  }
+}

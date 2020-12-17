@@ -1,0 +1,63 @@
+{
+    "prenom": {
+        "vide": "Vous devez entrer votre prénom.",
+        "pattern": "Pour le prénom seulement les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "nom": {
+        "vide": "Vous devez entrer votre nom de famille.",
+        "pattern": "Pour le nom de famille seulement les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "nom_complet": {
+        "vide": "Vous devez entrer votre nom complet.",
+        "pattern": "Assurez-vous d'entrer un nom complet valide."
+    },
+    "courriel": {
+        "vide": "Vous devez entrer votre adresse courriel.",
+        "pattern": "Assurez-vous d'entrer une adresse courriel valide."
+    },
+    "mot_de_passe": {
+        "vide": "Vous devez entrer votre mot de passe.",
+        "pattern": "Vous devez entrer un mot de passe valide."
+    },
+    "adresse": {
+        "vide": "Vous devez entrer votre adresse.",
+        "pattern": "Vous devez entrer une adresse valide."
+    },
+    "ville": {
+        "vide": "Vous devez entrer le nom de votre ville ou de votre village.",
+        "pattern": "Vous devez entrer une ville ou un village valide."
+    },
+    "province": {
+        "vide": "Vous devez choisir votre province."
+    },
+    "pays": {
+        "vide": "Vous devez choisir votre pays."
+    },
+    "code_postal": {
+        "vide": "Vous devez entrer votre code postal.",
+        "pattern": "Le code postal doit respecter le format X1X 1X1."
+    },
+    "type_paiement": {
+        "vide": "Vous devez choisir un type de paiement."
+    },
+    "nom_carte": {
+        "vide": "Vous devez entrer votre nom sur la carte de crédit.",
+        "pattern": "Vous devez entrer un nom de propriétaire de la carte de crédit valide."
+    },
+    "num_carte": {
+        "vide": "Vous devez entrer votre numéro de carte de crédit.",
+        "pattern": "Vous devez entrer un numéro de carte de crédit valide."
+    },
+    "code_securite": {
+        "vide": "Vous devez entrer votre code de sécurité.",
+        "pattern": "Vous devez entrer un code de sécurité valide."
+    },
+    "mois_securite": {
+        "vide": "Vous devez entrer un mois.",
+        "pattern": "Vous devez entrer un mois valide."
+    },
+    "annee_securite": {
+        "vide": "Vous devez entrer une année.",
+        "pattern": "Vous devez entrer une année valide."
+    }
+}

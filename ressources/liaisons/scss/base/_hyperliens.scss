@@ -1,0 +1,42 @@
+/**
+* @author Yoann Bélanger - yoann.belanger@hotmail.com
+*/
+
+a{
+  &:link,&:visited{
+    font-family: $fontePrimaire;
+  }
+  &:hover{
+    font-family: $fonteTitreMedium;
+  }
+  &:active{
+    color: $bleuPale;
+    font-family: $fonteTitreBold;
+  }
+}
+.navigation__liste--item a{
+  &:link,&:visited{
+    color: $blanc;
+    font-family: $fontePrimaire;
+  }
+  &:hover{
+    color: $blanc;
+    font-family: $fonteTitreMedium;
+  }
+  &:active{
+    font-family: $fonteTitreBold;
+  }
+}
+.liste__auteur--itemLiens, .titreLivres {
+  &:link,&:visited{
+    color: $blanc;
+    font-family: $fontePrimaire;
+    text-decoration-color: $blanc;
+  }
+  &:hover{
+    font-family: $fonteTitreMedium;
+  }
+  &:active{
+    font-family: $fonteTitreBold;
+  }
+}
